@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MedicomPrototype.Views.AddHCPPage"
+    Title="Add HCP Details">
+	<ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <TableView Intent="Form" x:Name="AddHcpForm">
+                    <TableRoot>
+                        <TableSection Title="HCP Details">
+                            <EntryCell Label="Name" Placeholder="Full Name" />
+                            <EntryCell Label="E-mail" Placeholder="E-mail ID" Keyboard="Email" />
+                        </TableSection>
+                        <TableSection Title="Permissions">
+                            <SwitchCell Text="Access Medical Data" On="true" />
+                            <SwitchCell Text="Contact via e-mail" On="true" />
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button x:Name="AddHcp" Text="Add Healthcare Professional" VerticalOptions="End" TextColor="White" BackgroundColor="{StaticResource Primary}" />
+            </StackLayout>
+        </StackLayout>        
+	</ContentPage.Content>
+</ContentPage>

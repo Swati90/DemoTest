@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MedicomPrototype"
+             xmlns:views="clr-namespace:MedicomPrototype.Views"
+             x:Class="MedicomPrototype.Views.LandingPage">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Activated="Handle_Activated" Priority="0" Text="Settings" Order="Primary" Icon="icon_settings.png" />         
+    </TabbedPage.ToolbarItems>
+
+    <TabbedPage.Children>
+        <views:AccountPage Icon="icon_favorites.png" Title="Account" />     
+        <views:AboutPage Icon="tab_about.png" Title="About" />
+    </TabbedPage.Children>
+</TabbedPage>

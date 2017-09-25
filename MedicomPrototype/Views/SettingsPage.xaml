@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MedicomPrototype.Views.SettingsPage">
+	<ContentPage.Content>
+<!--        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Ring">
+                    <SwitchCell Text="New Voice Mail" />
+                    <SwitchCell Text="New Mail" On="true" />
+                </TableSection>
+            </TableRoot>
+        </TableView>-->
+        <ListView Margin="20" ItemsSource="{Binding Diseases}"
+            HasUnevenRows="true"
+            IsPullToRefreshEnabled="true"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+    <ListView.Header>
+      <StackLayout Padding="10" 
+                   Orientation="Horizontal"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="#dadada">
+        <Label Text="Header"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand"
+               TextColor="Black"
+               FontAttributes="Bold"/>
+      </StackLayout>
+    </ListView.Header>
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell Text="{Binding DiseaseName}" />
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    <!--Custom View Cells-->
+    <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+    <ListView.Footer>
+      <StackLayout Padding="10"
+                   Orientation="Horizontal"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="#dadada">
+        <Label Text="Footer" 
+               HorizontalTextAlignment="Center" 
+               HorizontalOptions="FillAndExpand" 
+               TextColor="Black"
+               FontAttributes="Bold"/>
+      </StackLayout>
+    </ListView.Footer>
+  </ListView>
+	</ContentPage.Content>
+</ContentPage>

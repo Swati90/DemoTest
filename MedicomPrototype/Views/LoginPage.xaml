@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MedicomPrototype.Views.LoginPage">
+<!--xmlns:local="clr-namespace:MedicomPrototype.Controls"-->
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Image BackgroundColor="Black" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200" VerticalOptions="Center" Source="xamarin_logo.png" Aspect="AspectFit" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+<!--<TableView Intent="Settings" x:Name="MyView">
+    <TableRoot>
+        <TableSection Title="">
+            <EntryCell Label="Username" Placeholder="Username" />
+            <local:PasswordCell Label="Password" IsPassword="true" />
+            <SwitchCell Text="Emergency" On="true" />
+        </TableSection>
+    </TableRoot>
+</TableView>-->
+                <ScrollView>
+                    <Grid Padding="10" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*" />
+                            <RowDefinition Height="60*" />
+                            <RowDefinition Height="20*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Login" Grid.Row="0" Grid.Column="0" />
+                        <Button Text="Register" Grid.Row="0" Grid.Column="1" IsEnabled="false" />
+                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Label TextColor="Black" VerticalTextAlignment="Center" Text="Username" />
+                            <Entry Placeholder="Username" Keyboard="Email" />
+                            <Label TextColor="Black" VerticalTextAlignment="Center" Text="Password" />
+                            <Entry Placeholder="Password" IsPassword="true" />
+                            <Button Text="Forgot your password?" />
+                        </StackLayout>
+                        <Label Text="Emergency" Grid.Row="2" Grid.Column="0" />
+                        <Switch IsToggled="true" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" />
+                    </Grid>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button x:Name="Login" Text="Login" VerticalOptions="End" Clicked="Handle_Clicked" TextColor="White" BackgroundColor="{StaticResource Primary}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

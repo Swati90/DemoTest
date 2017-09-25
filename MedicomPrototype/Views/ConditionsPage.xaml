@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MedicomPrototype.Views.ConditionsPage"
+    Title="Patient Conditions">
+    <ContentPage.Content>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <ListView Margin="20" ItemsSource="{Binding Conditions}"
+                    HasUnevenRows="true"
+                    IsPullToRefreshEnabled="false"
+                    CachingStrategy="RecycleElement"
+                    IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <SwitchCell Text="{Binding DiseaseName}" On="{Binding IsPresent}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button x:Name="SaveConditions" Text="Save Patient Conditions" VerticalOptions="End" TextColor="White" BackgroundColor="{StaticResource Primary}" />
+            </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
